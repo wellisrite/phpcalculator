@@ -100,6 +100,9 @@ class CalculatorCommand extends Command
             case "-":
                 return $number1 - $number2;
                 break;
+            case "*": 
+                return $number1 * $number2;
+                break;
             default:
                 echo "Unknown Operator";
                 exit;
