@@ -41,7 +41,7 @@ class CalculatorCommand extends Command
 
     private function getFilePath(): string
     {
-        return __DIR__.'/csv/'.self::CSV_FILE_NAME;
+        return __DIR__.self::CSV_FILE_NAME;
     }
 
     public function handle(): void
