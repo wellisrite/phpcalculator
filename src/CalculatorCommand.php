@@ -42,9 +42,9 @@ class CalculatorCommand extends Command
 
     protected function getInput(): array
     {
-        $numbers = $this->argument('numbers');
+        $numbers = $this->operator == "^" ? [ $this->argument('base'), $this->argument('exp') ] : $this->argument('numbers');
         $index = 0;
-        
+
         try {
             $filteredInput = array_map(function ($number) use ($index, $numbers) {
                 $input = preg_replace('/[^0-9]/', '', $number);
@@ -105,6 +105,9 @@ class CalculatorCommand extends Command
                 break;
             case "/": 
                 return $number1 / $number2;
+                break;
+            case "^": 
+                return $number1 ** $number2;
                 break;
             default:
                 echo "Unknown Operator";
