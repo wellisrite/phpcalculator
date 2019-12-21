@@ -4,7 +4,7 @@ namespace Jakmall\Recruitment\Calculator\Commands;
 
 use Illuminate\Console\Command;
 
-class AddCommand extends CalculatorCommand
+class SubtractCommand extends CalculatorCommand
 {
     
     public function __construct()
@@ -18,17 +18,17 @@ class AddCommand extends CalculatorCommand
 
     protected function getCommandVerb(): string
     {
-        return 'add';
+        return 'subtract';
     }
 
     protected function getCommandPassiveVerb(): string
     {
-        return 'added';
+        return 'subtracted';
     }
 
     protected function getOperator(): string
     {
-        return '+';
+        return '-';
     }
     
     protected function getSignature(): string
@@ -48,5 +48,5 @@ class AddCommand extends CalculatorCommand
 
         return $string;
     }
-    
+
 }

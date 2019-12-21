@@ -93,6 +93,16 @@ class CalculatorCommand extends Command
      */
     protected function calculate($number1, $number2)
     {
-        return $number1 + $number2;
+        switch ($this->operator) {
+            case "+":
+                return $number1 + $number2;
+                break;
+            case "-":
+                return $number1 - $number2;
+                break;
+            default:
+                echo "Unknown Operator";
+                exit;
+        }
     }
 }
