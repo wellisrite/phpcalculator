@@ -7,12 +7,12 @@ use Illuminate\Events\Dispatcher;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
-// try {
+try {
     require_once __DIR__.'/vendor/autoload.php';
 
     $container = new Container();
     $dispatcher = new Dispatcher();
-    $app = new Application($container, $dispatcher, '0.5');
+    $app = new Application($container, $dispatcher, '0.6');
     $app->setName('Calculator');
 
     $commands = require_once __DIR__.'/commands.php';
@@ -28,6 +28,6 @@ use Symfony\Component\Console\Output\ConsoleOutput;
     $app->addCommands($commands);
 
     $app->run(new ArgvInput(), new ConsoleOutput());
-// } catch (Throwable $e) {
-//     echo "Something went wrong!";
-// }
+} catch (Throwable $e) {
+    echo "Something went wrong!\n";
+}
