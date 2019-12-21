@@ -52,7 +52,7 @@ class CalculatorCommand extends Command
             $rows = $this->readHistory($filters);
             $output = !empty($rows) ? $this->table($header, $rows) : "History is empty.";
         } elseif ($this->operator == self::HISTORY_CLEAR) {
-            $status = HistoryHelper::clearHistory();
+            $status = $this->clearHistory();
             $output =  $status ? "History cleared!" : "History not cleared.";
         } else {
             $numbers = $this->getInput();
